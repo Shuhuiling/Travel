@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item" v-for="item in itemList" :key="item.id">
+      <li class="item" v-for="item in list" :key="item.id">
         <!-- 图片是完全卡在框里的，所以外面不需要包裹div标签对 -->
           <img class="item-img" :src="item.imgUrl" />
           <div class="item-info">
@@ -18,25 +18,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data: function () {
-    return {
-      itemList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/f4/f455d92ba582f608.water.jpg_200x200_375e5775.jpg',
-        title: '南京汤山颐尚温泉南京汤山颐尚温泉南京汤山颐尚温泉',
-        desc: '热推景点'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/f7/f7c3be996152011c.img.jpg_200x200_0b707f70.jpg',
-        title: '南京总统府',
-        desc: '热推景点'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg',
-        title: '银杏湖乐园',
-        desc: '热推景点'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
