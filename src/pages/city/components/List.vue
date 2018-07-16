@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-      <div class="part" v-for="(item, key) in cities" :key="key">
+      <div class="part" v-for="(item, key) in cities" :key="key" :ref="key">
         <div class="title border-topbottom">{{ key }}</div>
         <div class="item-list">
           <div class="item" v-for="inneritem in item" :key="inneritem.id">{{ inneritem.name }}</div>
@@ -33,7 +33,16 @@ export default {
   name: 'List',
   props: {
     hot: Array,
-    cities: Object
+    cities: Object,
+    letter: String
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
@@ -48,7 +57,7 @@ export default {
       border-color: #ccc
     &:after
       border-color: #ccc
-  .list 
+  .list
     overflow: hidden
     position: absolute
     top: 1.58rem
