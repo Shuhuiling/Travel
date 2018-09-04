@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div class="alphabet">
     <ul class="item-list">
       <li class="item"
