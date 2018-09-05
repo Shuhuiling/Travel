@@ -43,6 +43,10 @@ export default {
   },
   activated () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  // 对全局的解绑
+  deactivated () {
+    window.removeaddEventListener('scroll', this.handleScroll)
   }
 }
 </script>
