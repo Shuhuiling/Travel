@@ -6,25 +6,30 @@
         <div class="banner-title">{{ this.sightName }}</div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe691;</span>
-          2
+          {{ this.gallaryImgs.length }}
         </div>
       </div>
     </div>
-    <common-gallary :imgs="gallaryImgs" v-show="gallaryshow" @close="handlegallaryclose"></common-gallary>
+    <fade-animation>
+      <common-gallary :imgs="gallaryImgs" v-show="gallaryshow" @close="handlegallaryclose"></common-gallary>
+    </fade-animation>
   </div>
 </template>
 
 <script>
 import CommonGallary from 'common/gallary/Gallary'
+import FadeAnimation from 'common/fade/FadeAnimation'
+
 export default {
   name: 'DetailBanner',
   components: {
-    CommonGallary
+    CommonGallary,
+    FadeAnimation
   },
   props: {
     sightName: String,
     bannerImg: String,
-    gallaryImgs: Array    
+    gallaryImgs: Array
   },
   data () {
     return {

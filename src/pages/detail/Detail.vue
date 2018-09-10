@@ -1,6 +1,6 @@
 <template>
   <div>
-    <detail-banner :sightName="sightName" :bannerImg="bannerImg" :galleryImgs="gallaryImgs"></detail-banner>
+    <detail-banner :sightName="sightName" :bannerImg="bannerImg" :gallaryImgs="gallaryImgs"></detail-banner>
     <detail-header></detail-header>
     <div class="space">
       <detail-list :list="categoryList"></detail-list>
@@ -39,7 +39,7 @@ export default {
         const data = res.data
         this.sightName = data.sightName
         this.bannerImg = data.bannerImg
-        this.galleryImgs = data.galleryImgs
+        this.gallaryImgs = data.gallaryImgs
         this.categoryList = data.categoryList
       }
     }
