@@ -54,7 +54,7 @@ export default {
   .wrapper
     height: 0
     width: 100%
-    padding-bottom: 73.3%
+    padding-bottom: 100%
     .swiper-img
       width: 100%
     .swiper-pagination

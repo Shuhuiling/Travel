@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- 路由的内容加载过一次之后，就存储在内存中，不需要重新执行mounted函数 -->
-    <keep-alive>
+    <keep-alive exclude="Detail">
       <router-view/>
     </keep-alive>
   </div>
