@@ -46,7 +46,7 @@ export default {
   },
   // 对全局的解绑
   deactivated () {
-    window.removeaddEventListener('scroll', this.handleScroll)
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
@@ -66,6 +66,7 @@ export default {
       font-size: .3rem
       color: #fff
   .header-abs
+    z-index: 3
     position: fixed
     top: 0
     left: 0
